@@ -1,0 +1,17 @@
+<nav *ngIf="totalItems > pageSize">
+    <ul class="pagination">
+        <li [ngClass]="{'disabled': currentPage == 1}">
+            <a (click)="previous()" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li [ngClass]="{'active': currentPage == page}" *ngFor="let page of pages" (click)="changePage(page)">
+            <a>{{ page }}</a>
+        </li>
+        <li [ngClass]="{'disabled': currentPage == pages.length}">
+            <a (click)="next()" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav> 
